@@ -1,0 +1,31 @@
+<div class="container ">
+  <div class="row">
+      <div class="col-12 col-sm-12 col-md-12">
+          <div class="card mt-4">
+              <div class="card-header">
+                  <h4>Assign Project List {{title}}</h4>
+              </div>
+              <div class="card-body">
+                  <div class="table-responsive" id="proTeamScroll" tabindex="2" style="overflow: hidden; outline: none;">
+                      <table class="table table-striped">
+                          <thead>
+                              <tr >
+                                  <th>Id.</th>
+                                  <th>title</th>
+                                  <th>body</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr *ngFor="let items of data">
+                                <th>{{items.id}}</th>
+                                <th>{{items.title}}</th>
+                                <th>{{items.body}}</th>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>

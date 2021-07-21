@@ -1,0 +1,29 @@
+// shared/post.service.ts
+
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { retry, catchError } from 'rxjs/operators';
+export interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class PostService {
+ private REST_API: string = 'https://jsonplaceholder.typicode.com/posts';
+ 
+ constructor(private http: HttpClient) { }
+
+
+
+ public getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.REST_API}`)
+  }
+
+}
